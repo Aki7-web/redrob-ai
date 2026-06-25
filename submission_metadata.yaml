@@ -1,0 +1,55 @@
+team_name: "REPLACE_ME"
+
+primary_contact:
+  name: "REPLACE_ME"
+  email: "REPLACE_ME@example.com"
+  phone: "+91-REPLACE_ME"
+
+team_members:
+  - name: "REPLACE_ME"
+    email: "REPLACE_ME@example.com"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/REPLACE_ME/redrob-ranker"
+sandbox_link: "https://REPLACE_ME.streamlit.app"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "REPLACE_ME, e.g. Local Linux box / Colab CPU runtime"
+  cpu_cores: 4
+  ram_gb: 16
+  python_version: "3.12"
+  os: "REPLACE_ME"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude (Anthropic) for architecture discussion, code generation, and
+  debugging while building the ranking pipeline (jd_requirements.py,
+  features.py, rank.py). All scoring logic, feature weights, and JD
+  interpretation were reviewed and adjusted by the team. No candidate data
+  was sent to any external LLM API -- the ranking step itself uses only
+  local scikit-learn TF-IDF, with no network calls.
+
+methodology_summary: |
+  Hybrid ranker combining TF-IDF semantic similarity (career text vs JD)
+  with rule-based features: trust-weighted skill match (endorsements +
+  duration, not just presence), title/career-history fit against the JD's
+  explicit disqualifiers, experience-band fit, location fit, and a
+  behavioral-signal modifier (activity recency, recruiter response rate,
+  notice period). A separate rule-based honeypot detector flags profiles
+  with internally-inconsistent experience claims and suppresses their
+  score. Full 100K-candidate run completes in ~50 seconds on CPU, no GPU
+  or network calls during ranking.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

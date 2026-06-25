@@ -1,0 +1,8 @@
+# No third-party packages are required for rank.py itself -- TF-IDF is
+# implemented with the Python standard library only (see tfidf.py), to
+# avoid scikit-learn's scipy dependency, which can be blocked by Windows
+# Application Control / Smart App Control policies on managed devices.
+#
+# These are only needed if you run the optional Streamlit sandbox app:
+streamlit>=1.30
+pandas>=2.0
