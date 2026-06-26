@@ -1,25 +1,25 @@
-team_name: "REPLACE_ME"
+team_name: "XYRON"
 
 primary_contact:
-  name: "REPLACE_ME"
-  email: "REPLACE_ME@example.com"
-  phone: "+91-REPLACE_ME"
+  name: "Suhani Singh"
+  email: "suhani2006.in@gmail.com"
+  phone: "+91-9382439094"
 
 team_members:
-  - name: "REPLACE_ME"
-    email: "REPLACE_ME@example.com"
+  - name: "Suhani Singh"
+    email: "suhani2006.in@gmail.com"
     role: "ML Engineer"
 
-github_repo: "https://github.com/REPLACE_ME/redrob-ranker"
-sandbox_link: "https://REPLACE_ME.streamlit.app"
+github_repo: "https://github.com/Aki7-web/redrob-ai"
+sandbox_link: "https://redrob-ai-uhp8xbasrnpnl4damnyxxv.streamlit.app/"
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
 compute:
-  platform: "REPLACE_ME, e.g. Local Linux box / Colab CPU runtime"
-  cpu_cores: 4
+  platform: "Windows laptop"
+  cpu_cores: 14
   ram_gb: 16
-  python_version: "3.12"
-  os: "REPLACE_ME"
+  python_version: "3.13.14"
+  os: "Windows 11 Home Single Language (Build 26200)"
   uses_gpu_for_inference: false
   has_network_during_ranking: false
   pre_computation_required: false
